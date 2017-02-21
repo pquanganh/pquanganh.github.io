@@ -10,3 +10,17 @@ function startCounter() {
     console.log(inputNumber);
     countUp(inputNumber);
 }
+
+// Function to restart the counter when press restart button
+function restartCounter() {
+    var inputNumber = document.getElementById('number-input').value;
+    document.getElementById('displayed-number').innerHTML = "0";
+    countUp(inputNumber);
+}
+
+// Make sure to clear out all old intervals to restart or start again
+function clearAllIntervals() {
+    for (var i = 1; i < 99999; i++) {
+        clearInterval(i);
+    }
+}
