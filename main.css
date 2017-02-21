@@ -42,10 +42,10 @@
 }
 
 .input-number input {
-    height: 40px;
     text-align: center;
     font-size: 21px;
     margin-top: 7%;
+    height: 40px;
 }
 
 .start-button {
