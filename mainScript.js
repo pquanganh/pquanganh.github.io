@@ -46,5 +46,69 @@ function countUp(maxNum) {
         console.log('interval gets called');
         var newNum = startNum++; //counting up by 1
         console.log(newNum);
+        if (newNum < maxNum) {
+            if (newNum % 5 === 0 && newNum % 3 === 0) { // divisible by 3 and 5
+                fingersDiv.style.backgroundColor = 'red';
+                fingersDiv.style.color = 'black';
+                toesDiv.style.backgroundColor = 'red';
+                toesDiv.style.color = 'black';
+                displayedNumber.innerHTML = newNum.toString();
+            }
+            else if (newNum % 5 === 0) { // divisible by 5
+                fingersDiv.style.backgroundColor = 'transparent';
+                fingersDiv.style.color = 'black';
+                toesDiv.style.backgroundColor = 'red';
+                toesDiv.style.color = 'black';
+                displayedNumber.innerHTML = newNum.toString();
+            }
+            else if (newNum % 3 === 0) { // divisible by 3
+                toesDiv.style.backgroundColor = 'transparent';
+                toesDiv.style.color = 'black';
+                fingersDiv.style.backgroundColor = 'red';
+                fingersDiv.style.color = 'black';
+                displayedNumber.innerHTML = newNum.toString();
+            }
+            else { // not divisible by 3 or 5
+                toesDiv.style.color = 'black';
+                fingersDiv.style.color = 'black';
+                toesDiv.style.backgroundColor = 'transparent';
+                fingersDiv.style.backgroundColor = 'transparent';
+                displayedNumber.innerHTML = newNum.toString();
+            }
+        }
+        if (newNum == maxNum) {
+            if (newNum % 5 === 0 && newNum % 3 === 0) { // divisible by 3 and 5
+                fingersDiv.style.backgroundColor = 'red';
+                fingersDiv.style.color = 'black';
+                toesDiv.style.backgroundColor = 'red';
+                toesDiv.style.color = 'black';
+                displayedNumber.innerHTML = newNum.toString();
+            }
+            else if (newNum % 5 === 0) { // divisible by 5
+                fingersDiv.style.backgroundColor = 'transparent';
+                fingersDiv.style.color = 'black';
+                toesDiv.style.backgroundColor = 'red';
+                toesDiv.style.color = 'black';
+                displayedNumber.innerHTML = newNum.toString();
+            }
+            else if (newNum % 3 === 0) { // divisible by 3
+                fingersDiv.style.backgroundColor = 'red';
+                fingersDiv.style.color = 'black';
+                toesDiv.style.backgroundColor = 'transparent';
+                toesDiv.style.color = 'black';
+                displayedNumber.innerHTML = newNum.toString();
+            }
+            else { //not divisible by 3 or 5
+                fingersDiv.style.color = 'black';
+                toesDiv.style.color = 'black';
+                toesDiv.style.backgroundColor = 'transparent';
+                fingersDiv.style.backgroundColor = 'transparent';
+                displayedNumber.innerHTML = newNum.toString();
+            }
+            displayedNumber.innerHTML = newNum.toString();
+            clearInterval(intervalId);
+        }
+    }, 1000);
+}
 
 
