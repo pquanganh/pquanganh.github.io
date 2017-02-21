@@ -24,3 +24,27 @@ function clearAllIntervals() {
         clearInterval(i);
     }
 }
+
+// Function to reset the counter and input when press reset button
+function resetCounter() {
+    clearAllIntervals();
+    document.getElementById('number-input').value = "";
+    document.getElementById('displayed-number').innerHTML = "0";
+    fingersDiv.style.color = 'black';
+    toesDiv.style.color = 'black';
+    toesDiv.style.backgroundColor = 'transparent';
+    fingersDiv.style.backgroundColor = 'transparent';
+}
+
+// Function for the counter and the highlighted blocks
+function countUp(maxNum) {
+    clearAllIntervals();
+    var startNum = 1; // set variable start counting number as 1
+    var displayedNumber = document.getElementById('displayed-number');
+    var intervalId = setInterval(function(){
+        console.log(intervalId);
+        console.log('interval gets called');
+        var newNum = startNum++; //counting up by 1
+        console.log(newNum);
+
+
